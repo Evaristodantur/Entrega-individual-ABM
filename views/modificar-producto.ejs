@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="/products/modificarProduct/<%= producto.id %>" method="POST">
+      <div>
+        <h3>Nombre del producto:</h3>
+        <input type="text" name="nombre" value="<%= producto.nombre %>">
+        <input type="hidden" name="id" value="<%= producto.id %>">
+      </div>
+      <div>
+        <h3>Descripcion:</h3>
+        <input type="text" name="descripcion" value="<%= producto.descripcion %>">
+      </div>
+      <div>
+        <h3>Precio:</h3>
+        <input type="text" name="precio" value="<%= producto.precio %>">
+      </div>
+      <div>
+        <h3>Stock:</h3>
+        <input type="text" name="stock" value="<%= producto.stock %>">
+      </div>
+      <div>
+        <h3>Marca:</h3>
+        <input type="text" name="marca" value="<%= producto.marca %>">
+      </div>
+      <div style="margin-top:10px">
+        <button type="submit">Modificar producto</button>
+        <button onclick="window.location.href='/products/eliminarProduct/<%= producto.id %>'" type="reset">Eliminar producto</button>
+      </div>
+    </form>
+  </body>
+</html>

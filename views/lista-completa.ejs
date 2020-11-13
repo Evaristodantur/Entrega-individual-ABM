@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <style>
+    h3{margin-left: 10px;margin-block-start:3px;margin-block-end:3px;}
+    button{margin-left: 10px; color: black;}
+  </style>
+  <body><div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+      <% productos.forEach(producto => {%>
+        <div style="width:30%; border-radius: 6px; border: 1px solid black; margin-top: 10px">
+        <div style="display:flex;">
+          <h3>ID del producto: <%= producto.id %></h3>
+        </div>
+      <div style="display:flex;">
+        <h3>Nombre del producto: <%= producto.nombre %></h3>
+      </div>
+      <div style="display:flex;">
+        <h3>Descripcion: <%= producto.descripcion %></h3>
+      </div>
+      <div style="display:flex;"> 
+        <h3>Precio: <%= producto.precio %></h3>
+      </div>
+      <div style="display:flex;">
+        <h3>Stock: <%= producto.stock %></h3>
+      </div>
+      <div style="display:flex;">
+        <h3>Marca: <%= producto.marca %></h3>
+      </div>
+      <div style="margin-top:10px">
+        <button onclick="window.location.href='/products/modificarProduct/<%= producto.id %>'" type="reset">Modificar producto</button>
+        <button onclick="window.location.href='/products/eliminarProduct/<%= producto.id %>'" type="reset">Eliminar producto</button>
+      </div>
+    </div>
+    <%}); %></div>
+  </body>
+</html>
